@@ -117,3 +117,8 @@ if comeca == (""):
                         print('Posição inválida, digite um número entre 1 e 2:')
                         b= True
             a= False
+        existe_movimentos = possui_movimentos_possiveis(baralho)
+if len(baralho) >1:
+    print ("Você Perdeu")
+else:
+    print ("Parabéns! Você ganhou")
