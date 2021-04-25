@@ -81,3 +81,4 @@ if comeca == (""):
         print('{0}.  {1}'.format(numero, baralho[i_baralho]))
         numero += 1
         i_baralho += 1
+#commit
