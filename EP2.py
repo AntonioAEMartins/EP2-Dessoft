@@ -75,14 +75,14 @@ if comeca == (""):
 #Variaveis
     baralho = cria_baralho()
 #Print Baralho
-    i_baralho = 0
-    numero = 1
-    while i_baralho < len(baralho):
-        print('{0}.  {1}'.format(numero, baralho[i_baralho]))
-        numero += 1
-        i_baralho += 1
-    existe_movimentos = True
+    existe_movimentos = possui_movimentos_possiveis(baralho)
     while existe_movimentos:
+        i_baralho = 0
+        numero = 1
+        while i_baralho < len(baralho):
+            print('{0}.  {1}'.format(numero, baralho[i_baralho]))
+            numero += 1
+            i_baralho += 1
         a = True
         while a:
             p = int(input('Escolha uma carta (digite um numero entre 1 e 52)'))
@@ -111,3 +111,5 @@ if comeca == (""):
                     else:
                         print('Posição inválida, digite um número entre 1 e 2:')
                         b= True
+                print (baralho)
+            a= False
