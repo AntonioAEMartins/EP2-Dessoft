@@ -69,3 +69,6 @@ print("1. As duas cartas possuem o mesmo valor ou")
 print("2. As duas cartas possuem o mesmo naipe.")
 print("")
 print("Desde que alguma das condições acima seja satisfeita, qualquer carta pode ser movimentada.")
+#Pressione Enter para iniciar:
+comeca=input()
+if comeca == (""):
