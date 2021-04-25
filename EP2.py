@@ -81,4 +81,30 @@ if comeca == (""):
         print('{0}.  {1}'.format(numero, baralho[i_baralho]))
         numero += 1
         i_baralho += 1
-#commit
+    existe_movimentos = True
+    while existe_movimentos:
+        a = True
+        while a:
+            p = int(input('Escolha uma carta (digite um numero entre 1 e 52)'))
+            possiveis_mov = lista_movimentos_possiveis(baralho, p-1)
+            if possiveis_mov == []:
+                a = False
+            if possiveis_mov == [1]:
+                empilha(baralho, p-1, p-2)
+            if possiveis_mov == [3]:
+                empilha(baralho,p-1, p-4)
+            if possiveis_mov == [1, 3]:
+                b = True
+                while b:
+                    print('Sobre qual carta você quer empilhar o {0}?'.format(baralho[p-1]))
+                    print('1.  {0}'.format(baralho[p-2]))
+                    print('2.  {0}'.format(baralho[p-4]))
+                    posicao_empilha = int(input('Digite o número de sua escolha(1-2):  '))
+                    if posicao_empilha == 1:
+                        empilha(baralho, p-1, p-2)
+                        b = False
+                    if posicao_empilha == 2:
+                        empilha(baralho, p-1, p-4)
+                        b = False
+                    else:
+                        print('Posição inválida, digite um número entre 1 e 2:')
