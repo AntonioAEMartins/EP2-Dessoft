@@ -122,3 +122,6 @@ if len(baralho) >1:
     print ("Você Perdeu")
 else:
     print ("Parabéns! Você ganhou")
+
+
+#Você quer jogar de novo? S/N (Para começar o jogo)
