@@ -12,6 +12,7 @@ def cria_baralho ():
             baralho.append(carta)
     random.shuffle(baralho)
     return baralho
+<<<<<<< HEAD
 
 def extrai_naipe (carta):
     if len(carta) == 3:
@@ -47,3 +48,5 @@ def possui_movimentos_possiveis(b):
         else:
             i += 1
     return False
+=======
+>>>>>>> ead8da7233c8501d381a4771551945b8490811e5
