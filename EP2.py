@@ -72,3 +72,8 @@ print("Desde que alguma das condições acima seja satisfeita, qualquer carta po
 #Pressione Enter para iniciar:
 comeca=input()
 if comeca == (""):
+#Variaveis
+baralho=(cria_baralho())
+#Print Baralho
+for e in baralho:
+    print (e)
