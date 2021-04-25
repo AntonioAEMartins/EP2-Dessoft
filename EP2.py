@@ -12,19 +12,19 @@ def cria_baralho ():
             baralho.append(carta)
     random.shuffle(baralho)
     return baralho
-<<<<<<< HEAD
-
+#Extrai Naipe
 def extrai_naipe (carta):
     if len(carta) == 3:
         return carta[2]
     else:
         return carta[1]
-
+#Extrai Valor
 def extrai_valor (carta):
     if len(carta) == 3:
         return carta[0]+carta[1]
     else:
         return carta[0]
+#Lista de Movimentos Possiveis
 def lista_movimentos_possiveis (b,p):
     l_mov=[]
     if p==0:
@@ -38,7 +38,7 @@ def lista_movimentos_possiveis (b,p):
     elif extrai_valor(b[p]) == extrai_valor(b[p-3]) and (p-3)>=0:
         l_mov.append(3)
     return l_mov
-
+#Possui Movimentos Possiveis
 def possui_movimentos_possiveis(b):
     i = 0
     while i < len(b):
@@ -48,5 +48,3 @@ def possui_movimentos_possiveis(b):
         else:
             i += 1
     return False
-=======
->>>>>>> ead8da7233c8501d381a4771551945b8490811e5
