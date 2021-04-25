@@ -8,8 +8,6 @@ def extrai_valor (carta):
         return carta[0]+carta[1]
     else:
         return carta[0]
-
-
 def lista_movimentos_possiveis (b,p):
     l_mov=[]
     if p==0:
@@ -24,9 +22,8 @@ def lista_movimentos_possiveis (b,p):
         l_mov.append(3)
     return l_mov
 
-    
-    
 
-L1=['A♦', 'J♥', 'Q♣', 'K♠', '10♣']
-print(lista_movimentos_possiveis(L1,4))
+
+L1=['6♥', 'J♥', '9♣', '9♥']
+print(empilha(L1,1,0))
 
