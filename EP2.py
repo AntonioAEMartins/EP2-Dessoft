@@ -11,4 +11,5 @@ def cria_baralho ():
         for i in cartas:
             carta=i+e
             baralho.append(carta)
+    random.shuffle(baralho)
     return baralho
