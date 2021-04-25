@@ -1,6 +1,5 @@
 #Import Bibliotecas
 import random
-#Print Inicial
 #Criar Baralho
 def cria_baralho ():
     cartas=["2","3","4","5","6","7","8","9","10","J","Q","K","A"]
@@ -48,3 +47,15 @@ def possui_movimentos_possiveis(b):
         else:
             i += 1
     return False
+#Print inicial
+print("Paciência Acordeão")
+print("==================")
+print("")
+print("Seja bem-vindo ao jogo de Paciência Acordeão! O objetivod este jogo é colocar todas as cartas em uma mesma pilha")
+print("")
+print("Existem apenas dois movimentos possíveis:")
+print("")
+print("1.Empilhar uma carta sobre a carta imediatamente anterior;")
+print("2.Empilhar uma carta sobre a terceira carta anterior.")
+print("")
+print("Para que um movimento possa ser realizado basta que uma das duas condições abaixo seja atendida:")
