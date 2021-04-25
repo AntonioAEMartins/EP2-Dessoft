@@ -1,6 +1,5 @@
 #Import Bibliotecas
 import random
-from matl
 #Print Inicial
 #Criar Baralho
 def cria_baralho ():
@@ -39,22 +38,12 @@ def lista_movimentos_possiveis (b,p):
         l_mov.append(3)
     return l_mov
 
-def possui_movimentos_possiveis(baralho):
-    naipe=[]
-    valor=[]
-    for e in baralho:
-        naipe.append(extrai_naipe(e))
-        valor.append(extrai_valor(e))
-    estado=False
-    t=1
-    if naipe[t]==naipe[t-1]:
-        estado = True
-    elif valor[t]==valor[t-1]:
-        estado=True
-    while t<(len(baralho)):
-        if naipe[t]==naipe[t-3] and (t-3) >=0:
-            estado=True
-        elif valor[t] == valor[t-3] and (t-3)>=0:
-            estado=True
-        t+=1
-    return estado
+def possui_movimentos_possiveis(b):
+    i = 0
+    while i < len(b):
+        a = lista_movimentos_possiveis(b, i)
+        if a != []:
+            return True
+        else:
+            i += 1
+    return False
