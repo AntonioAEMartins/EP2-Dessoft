@@ -47,7 +47,7 @@ def possui_movimentos_possiveis(b):
         else:
             i += 1
     return False
-
+#Empilha
 def empilha(b,o,d):
     b[d]=b[o]
     del b[o]
