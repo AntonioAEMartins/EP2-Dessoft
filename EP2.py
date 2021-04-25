@@ -103,8 +103,11 @@ if comeca == (""):
                     if posicao_empilha == 1:
                         empilha(baralho, p-1, p-2)
                         b = False
+                        break
                     if posicao_empilha == 2:
                         empilha(baralho, p-1, p-4)
                         b = False
+                        break
                     else:
                         print('Posição inválida, digite um número entre 1 e 2:')
+                        b= True
