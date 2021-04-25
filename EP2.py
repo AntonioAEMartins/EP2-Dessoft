@@ -47,6 +47,11 @@ def possui_movimentos_possiveis(b):
         else:
             i += 1
     return False
+
+def empilha(b,o,d):
+    b[d]=b[o]
+    del b[o]
+    return b
 #Print inicial
 print("Paciência Acordeão")
 print("==================")
