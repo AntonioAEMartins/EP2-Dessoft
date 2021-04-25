@@ -73,7 +73,11 @@ print("Desde que alguma das condições acima seja satisfeita, qualquer carta po
 comeca=input()
 if comeca == (""):
 #Variaveis
-baralho=(cria_baralho())
+    baralho = cria_baralho()
 #Print Baralho
-for e in baralho:
-    print (e)
+    i_baralho = 0
+    numero = 1
+    while i_baralho < len(baralho):
+        print('{0}.  {1}'.format(numero, baralho[i_baralho]))
+        numero += 1
+        i_baralho += 1
