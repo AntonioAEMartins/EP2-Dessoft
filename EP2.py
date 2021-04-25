@@ -85,9 +85,14 @@ if comeca == (""):
             i_baralho += 1
         a = True
         while a:
-            p = int(input('Escolha uma carta (digite um numero entre 1 e 52)'))
+            p = int(input('Escolha uma carta (digite um numero entre 1 e {}):  '.format(numero-1)))
+            if p >52:
+                print("Posição inválida. Por favor, digite um número entre 1 e {}:  ".format(numero-1))
+                a =False
+                break
             possiveis_mov = lista_movimentos_possiveis(baralho, p-1)
             if possiveis_mov == []:
+                print ("A carta {0} não pode ser movida. Por favor, digite um número entre 1 e {1}:  ".format(baralho[p-1],numero-1))
                 a = False
             if possiveis_mov == [1]:
                 empilha(baralho, p-1, p-2)
@@ -111,5 +116,4 @@ if comeca == (""):
                     else:
                         print('Posição inválida, digite um número entre 1 e 2:')
                         b= True
-                print (baralho)
             a= False
