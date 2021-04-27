@@ -4,5 +4,5 @@ def extrai_naipe (carta):
     else:
         return carta[1]
 
-L1=[['A♦', 'J♥', 'Q♣', 'K♠', '10♣']]
+L1=['A♦', 'J♥', 'Q♣', 'K♠', '10♣']
 print (extrai_naipe(L1))
