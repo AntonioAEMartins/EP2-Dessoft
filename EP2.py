@@ -70,56 +70,63 @@ print("2. As duas cartas possuem o mesmo naipe.")
 print("")
 print("Desde que alguma das condições acima seja satisfeita, qualquer carta pode ser movimentada.")
 #Pressione Enter para iniciar:
-comeca=input()
-if comeca == (""):
+estado_inicial=True
+while estado_inicial:
+    comeca=input("Precione Enter para começar")
+    if comeca == (""):
 #Variaveis
-    baralho = cria_baralho()
+        baralho = cria_baralho()
 #Print Baralho
-    existe_movimentos = possui_movimentos_possiveis(baralho)
-    while existe_movimentos:
-        i_baralho = 0
-        numero = 1
-        while i_baralho < len(baralho):
-            print('{0}.  {1}'.format(numero, baralho[i_baralho]))
-            numero += 1
-            i_baralho += 1
-        a = True
-        while a:
-            p = int(input('Escolha uma carta (digite um numero entre 1 e {}):  '.format(numero-1)))
-            if p >52 or p>=numero:
-                print("Posição inválida. Por favor, digite um número entre 1 e {}:  ".format(numero-1))
-                a =False
-                break
-            possiveis_mov = lista_movimentos_possiveis(baralho, p-1)
-            if possiveis_mov == []:
-                print ("A carta {0} não pode ser movida. Por favor, digite um número entre 1 e {1}:  ".format(baralho[p-1],numero-1))
-                a = False
-            if possiveis_mov == [1]:
-                empilha(baralho, p-1, p-2)
-            if possiveis_mov == [3]:
-                empilha(baralho,p-1, p-4)
-            if possiveis_mov == [1, 3]:
-                b = True
-                while b:
-                    print('Sobre qual carta você quer empilhar o {0}?'.format(baralho[p-1]))
-                    print('1.  {0}'.format(baralho[p-2]))
-                    print('2.  {0}'.format(baralho[p-4]))
-                    posicao_empilha = int(input('Digite o número de sua escolha(1-2):  '))
-                    if posicao_empilha == 1:
-                        empilha(baralho, p-1, p-2)
-                        b = False
-                        break
-                    if posicao_empilha == 2:
-                        empilha(baralho, p-1, p-4)
-                        b = False
-                        break
-                    else:
-                        print('Posição inválida, digite um número entre 1 e 2:')
-                        b= True
-            a= False
         existe_movimentos = possui_movimentos_possiveis(baralho)
-if len(baralho) >1:
-    print ("Você Perdeu")
-else:
-    print ("Parabéns! Você ganhou")
+        while existe_movimentos:
+            i_baralho = 0
+            numero = 1
+            while i_baralho < len(baralho):
+                print('{0}.  {1}'.format(numero, baralho[i_baralho]))
+                numero += 1
+                i_baralho += 1
+            a = True
+            while a:
+                p = int(input('Escolha uma carta (digite um numero entre 1 e {}):  '.format(numero-1)))
+                if p >52 or p>=numero:
+                    print("Posição inválida. Por favor, digite um número entre 1 e {}:  ".format(numero-1))
+                    a =False
+                    break
+                possiveis_mov = lista_movimentos_possiveis(baralho, p-1)
+                if possiveis_mov == []:
+                    print ("A carta {0} não pode ser movida. Por favor, digite um número entre 1 e {1}:  ".format(baralho[p-1],numero-1))
+                    a = False
+                if possiveis_mov == [1]:
+                    empilha(baralho, p-1, p-2)
+                if possiveis_mov == [3]:
+                    empilha(baralho,p-1, p-4)
+                if possiveis_mov == [1, 3]:
+                    b = True
+                    while b:
+                        print('Sobre qual carta você quer empilhar o {0}?'.format(baralho[p-1]))
+                        print('1.  {0}'.format(baralho[p-2]))
+                        print('2.  {0}'.format(baralho[p-4]))
+                        posicao_empilha = int(input('Digite o número de sua escolha(1-2):  '))
+                        if posicao_empilha == 1:
+                            empilha(baralho, p-1, p-2)
+                            b = False
+                            break
+                        if posicao_empilha == 2:
+                            empilha(baralho, p-1, p-4)
+                            b = False
+                            break
+                        else:
+                            print('Posição inválida, digite um número entre 1 e 2:')
+                            b= True
+                a= False
+            existe_movimentos = possui_movimentos_possiveis(baralho)
+    if len(baralho) >1:
+        print ("Você Perdeu")
+    else:
+        print ("Parabéns! Você ganhou")
+    estado_final=input("Você quer jogar de novo? (sim/nao)")
+    if estado_final == "sim":
+        estado_inicial = True
+    if estado_final == "nao":
+        estado_inicial = False
 #Você quer jogar de novo? S/N (Para começar o jogo)
