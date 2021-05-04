@@ -1,5 +1,6 @@
 #Import Bibliotecas
 import random
+from colorama import Fore, Back, Style
 #Criar Baralho
 def cria_baralho ():
     cartas=["2","3","4","5","6","7","8","9","10","J","Q","K","A"]
@@ -82,7 +83,15 @@ while estado_inicial:
             i_baralho = 0
             numero = 1
             while i_baralho < len(baralho):
-                print('{0}.  {1}'.format(numero, baralho[i_baralho]))
+                naipe=extrai_naipe(baralho[i_baralho])
+                if naipe == "♠":
+                    print(Fore.RED + '{0}.  {1}'.format(numero, baralho[i_baralho]))
+                if naipe == "♥":
+                    print(Fore.WHITE + '{0}.  {1}'.format(numero, baralho[i_baralho]))
+                if naipe == "♦":
+                    print(Fore.GREEN + '{0}.  {1}'.format(numero, baralho[i_baralho]))
+                if naipe == "♣":
+                    print(Fore.YELLOW + '{0}.  {1}'.format(numero, baralho[i_baralho]))
                 numero += 1
                 i_baralho += 1
             a = True
@@ -129,4 +138,3 @@ while estado_inicial:
         estado_inicial = True
     if estado_final == "nao":
         estado_inicial = False
-#Você quer jogar de novo? S/N (Para começar o jogo)
