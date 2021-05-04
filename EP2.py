@@ -96,7 +96,7 @@ while estado_inicial:
                 i_baralho += 1
             a = True
             while a:
-                p = int(input('Escolha uma carta (digite um numero entre 1 e {}):  '.format(numero-1)))
+                p =  int(input(Fore.WHITE + "Escolha uma carta (digite um número entre 1 e {}):  ".format(numero-1)))
                 if p >52 or p>=numero:
                     print("Posição inválida. Por favor, digite um número entre 1 e {}:  ".format(numero-1))
                     a =False
