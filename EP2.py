@@ -113,9 +113,25 @@ while estado_inicial:
                     b = True
                     while b:
                         print('Sobre qual carta você quer empilhar o {0}?'.format(baralho[p-1]))
-                        print('1.  {0}'.format(baralho[p-2]))
-                        print('2.  {0}'.format(baralho[p-4]))
-                        posicao_empilha = int(input('Digite o número de sua escolha(1-2):  '))
+                        naipe_p2=extrai_naipe(baralho[p-2])
+                        naipe_p4=extrai_naipe(baralho[p-4])
+                        if naipe_p2 == "♠":
+                            print(Fore.RED + "1.  {0}".format(baralho[p-2]))
+                        if naipe_p2 == "♥":
+                            print(Fore.WHITE + "1.  {0}".format(baralho[p-2]))
+                        if naipe_p2 == "♦":
+                            print(Fore.GREEN + "1.  {0}".format(baralho[p-2]))
+                        if naipe_p2 == "♣":
+                            print(Fore.YELLOW + "1.  {0}".format(baralho[p-2]))
+                        if naipe_p4 == "♠":
+                            print(Fore.RED + "2.  {0}".format(baralho[p-4]))
+                        if naipe_p4 == "♥":
+                            print(Fore.WHITE + "2.  {0}".format(baralho[p-4]))
+                        if naipe_p4 == "♦":
+                            print(Fore.GREEN + "2.  {0}".format(baralho[p-4]))
+                        if naipe_p4 == "♣":
+                            print(Fore.YELLOW + "2.  {0}".format(baralho[p-4]))
+                        posicao_empilha = int(input(Fore.WHITE+'Digite o número de sua escolha(1-2):  '))
                         if posicao_empilha == 1:
                             empilha(baralho, p-1, p-2)
                             b = False
