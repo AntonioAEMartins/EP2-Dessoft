@@ -130,10 +130,10 @@ while estado_inicial:
                 a= False
             existe_movimentos = possui_movimentos_possiveis(baralho)
     if len(baralho) >1:
-        print ("Você Perdeu")
+        print(Fore.RED + "Você Perdeu")
     else:
-        print ("Parabéns! Você ganhou")
-    estado_final=input("Você quer jogar de novo? (sim/nao)")
+        print(Fore.GREEN + "Parabéns! Você ganhou")
+    estado_final=input(Fore.WHITE + "Você quer jogar de novo? (sim/nao) ")
     if estado_final == "sim":
         estado_inicial = True
     if estado_final == "nao":
